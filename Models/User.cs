@@ -24,5 +24,9 @@ namespace Backend.Models
 
         [Column(TypeName = "nvarchar(50)")]
         public string? Role { get; set; }
+
+        public string? Otp { get; set; }
+        public DateTime? OtpExpirationTime { get; set; }
+        public bool IsVerified { get; set; }
     }
 }

@@ -9,5 +9,6 @@ namespace Backend.Pattern.Interfaces
         Task<bool> Register(User user);
         Task<User> Login(User user);
         Task<User> GetUserByEmail(string email);
+        bool VerifyOTP(string email, string otp);
     }
 }

@@ -43,5 +43,10 @@ namespace Backend.Pattern.Repository
             return await _dataContext.Users.FirstOrDefaultAsync(u => u.Email == email);
         }
 
+        public bool VerifyOTP(string email, string otp)
+        {
+            var userOTP = _dataContext.Users.SingleOrDefault(u => u.Email == email && u.IsVerified == false  && u.Otp == otp && u.OtpExpirationTime > DateTime.Now);
+            return userOTP != null;
+        }
     }
 }
