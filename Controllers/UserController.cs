@@ -1,7 +1,7 @@
-﻿using Backend.DTOS;
+﻿using Backend.Data;
+using Backend.DTOS;
 using Backend.Helpers;
 using Backend.Models;
-using Backend.Pattern.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers
