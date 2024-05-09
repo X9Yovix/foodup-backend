@@ -20,6 +20,8 @@ namespace Backend.Models
 		[Column(TypeName = "nvarchar(255)")]
 		public string Image { get; set; }
 
-		public virtual ICollection<Category> Categories { get; set; }
+		public int CategoryId { get; set; }
+
+		public Category Category { get; set; }
 	}
 }

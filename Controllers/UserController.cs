@@ -2,11 +2,13 @@
 using Backend.DTOS;
 using Backend.Helpers;
 using Backend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers
 {
     [ApiController]
+    [AllowAnonymous]
     [Route("api/users")]
     public class UserController : ControllerBase
     {

@@ -12,9 +12,10 @@ namespace Backend.DTOS
 		[Required]
 		public decimal Price { get; set; }
 
-		public string Image { get; set; }
+		[Required]
+		public IFormFile Image { get; set; }
 
 		[Required]
-		public List<int> CategoryIds { get; set; }
+		public int CategoryId { get; set; }
 	}
 }

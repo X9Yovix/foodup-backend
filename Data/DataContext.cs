@@ -14,15 +14,6 @@ namespace Backend.Data
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-
-			modelBuilder.Entity<Product>()
-				.HasMany(p => p.Categories)
-				.WithMany(c => c.Products)
-				.UsingEntity(cp => cp.ToTable("CategoryProduct"));
-
-			//modelBuilder.Entity<CategoryProduct>()
-			//	.HasKey(pc => new { pc.ProductId, pc.CategoryId });
-			
 		}
 	}
 }

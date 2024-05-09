@@ -9,6 +9,5 @@ namespace Backend.Pattern.Interfaces
 		Task AddProduct(Product product);
 		Task UpdateProduct(Product product);
 		Task DeleteProduct(int id);
-		Task AddCategoriesToProduct(int productId, List<int> categoryIds);
 	}
 }
