@@ -21,7 +21,7 @@ namespace Backend.Controllers
 		public async Task<IActionResult> GetProducts()
 		{
 			var products = await _uow.ProductRepository.GetAllProducts();
-			return Ok(products);
+			return Ok(new { products = products });
 		}
 
 		[HttpGet("{id}")]

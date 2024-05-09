@@ -14,6 +14,7 @@ namespace Backend.Data
         public IUserRepository UserRepository => new UserRepository(_dataContext);
 		public ICategoryRepository CategoryRepository => new CategoryRepository(_dataContext);
 		public IProductRepository ProductRepository => new ProductRepository(_dataContext);
+		public IOrderRepository OrderRepository => new OrderRepository(_dataContext);
 		public async Task<bool> SaveChangesAsync()
         {
             return await _dataContext.SaveChangesAsync() > 0;

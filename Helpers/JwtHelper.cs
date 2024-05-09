@@ -28,7 +28,8 @@ namespace Backend.Helpers
             };
                */
 			var claims = new[]
-{
+            {
+				new Claim(ClaimTypes.NameIdentifier, (user.Id).ToString()),
 				new Claim("firstName", user.FirstName),
 				new Claim("lastName", user.LastName),
 				new Claim("email", user.Email),

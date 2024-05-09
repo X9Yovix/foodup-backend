@@ -12,7 +12,6 @@ namespace Backend.DTOS
 		[Required]
 		public decimal Price { get; set; }
 
-		[Required]
 		public IFormFile Image { get; set; }
 
 		[Required]
