@@ -46,5 +46,12 @@ namespace Backend.Pattern.Repository
 			var category = await _dataContext.Categories.FindAsync(id);
 			_dataContext.Categories.Remove(category);
 		}
+		public async Task<IEnumerable<Category>> GetPaginatedCategories(int pageNumber, int pageSize)
+		{
+			return await _dataContext.Categories
+				.Skip((pageNumber - 1) * pageSize)
+				.Take(pageSize)
+				.ToListAsync();
+		}
 	}
 }

@@ -9,5 +9,6 @@ namespace Backend.Pattern.Interfaces
 		Task AddCategory(Category category);
 		Task UpdateCategory(Category category);
 		Task DeleteCategory(int id);
+		Task<IEnumerable<Category>> GetPaginatedCategories(int pageNumber, int pageSize);
 	}
 }
