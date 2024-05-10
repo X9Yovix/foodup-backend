@@ -50,7 +50,7 @@ namespace Backend.Controllers
 			if (productRequest.Image != null && productRequest.Image.Length > 0)
 			{
 				var imagePath = $"Uploads/{Guid.NewGuid().ToString()}_{productRequest.Image.FileName}";
-				var filePath = Path.Combine(Directory.GetCurrentDirectory(), imagePath);
+				var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", imagePath);
 
 				using (var stream = new FileStream(filePath, FileMode.Create))
 				{
@@ -88,7 +88,7 @@ namespace Backend.Controllers
 			if (productRequest.Image != null && productRequest.Image.Length > 0)
 			{
 				var imagePath = $"uploads/{Guid.NewGuid().ToString()}_{productRequest.Image.FileName}";
-				var filePath = Path.Combine(Directory.GetCurrentDirectory(), imagePath);
+				var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", imagePath);
 
 				using (var stream = new FileStream(filePath, FileMode.Create))
 				{
@@ -97,7 +97,7 @@ namespace Backend.Controllers
 
 				if (!string.IsNullOrEmpty(existingProduct.Image))
 				{
-					var oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), existingProduct.Image);
+					var oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", existingProduct.Image);
 					if (System.IO.File.Exists(oldImagePath))
 					{
 						System.IO.File.Delete(oldImagePath);

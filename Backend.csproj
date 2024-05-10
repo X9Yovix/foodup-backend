@@ -22,4 +22,38 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Uploads\.gitignore" />
+    <None Include="wwwroot\Uploads\04a79950-9079-400a-a3d4-d57f3dea949c_admin.png" />
+    <None Include="wwwroot\Uploads\076ba1bf-43f2-4d1f-88d3-fbbfc0106304_09d556a2fa7557a67e444716629febeb.jpg" />
+    <None Include="wwwroot\Uploads\0d0e0efe-c96f-4493-9b24-1993d1a4298a_user.png" />
+    <None Include="wwwroot\Uploads\104e00c2-67dd-4299-8ffc-6de0963f2a1c_09d556a2fa7557a67e444716629febeb.jpg" />
+    <None Include="wwwroot\Uploads\15df7ceb-929b-42fa-ae6b-4a2bce1e0fe1_09d556a2fa7557a67e444716629febeb.jpg" />
+    <None Include="wwwroot\Uploads\163dcd9b-f4a7-410d-a7c6-47b49876b37c_admin.png" />
+    <None Include="wwwroot\Uploads\2181f755-43aa-48aa-812b-b4c96204489f_user.png" />
+    <None Include="wwwroot\Uploads\2bead366-6403-4a4a-aa21-507be91a7141_admin.png" />
+    <None Include="wwwroot\Uploads\33d9419a-3baa-4799-8be7-78929447279d_admin.png" />
+    <None Include="wwwroot\Uploads\348ed889-5589-485b-a8fd-535c9d626621_09d556a2fa7557a67e444716629febeb.jpg" />
+    <None Include="wwwroot\Uploads\3daa059f-c8f0-4437-94fa-76296e84e7e0_user.png" />
+    <None Include="wwwroot\Uploads\3fce0505-ea0a-483c-82dd-9eeb5f9e19af_09d556a2fa7557a67e444716629febeb.jpg" />
+    <None Include="wwwroot\Uploads\45441a47-08af-485e-a1e8-d075a9d73330_admin.png" />
+    <None Include="wwwroot\Uploads\4d1f3db1-7518-4351-8d3f-8870ef348f8f_admin.png" />
+    <None Include="wwwroot\Uploads\53f5ced7-5516-4a10-ac32-60f41694c940_09d556a2fa7557a67e444716629febeb.jpg" />
+    <None Include="wwwroot\Uploads\5dba730a-dece-4633-9cc9-77bce3721759_user.png" />
+    <None Include="wwwroot\Uploads\6041aafc-f84f-4bd2-920a-bc10d4dd1d1e_09d556a2fa7557a67e444716629febeb.jpg" />
+    <None Include="wwwroot\Uploads\749f2d75-cdc1-48dc-9aac-44ffc07d20c8_09d556a2fa7557a67e444716629febeb.jpg" />
+    <None Include="wwwroot\Uploads\79189813-d38e-4bb0-b46d-abbae7bbad64_admin.png" />
+    <None Include="wwwroot\Uploads\8b578b8c-fb7f-4f7f-9d08-a8729a0c8f57_user.png" />
+    <None Include="wwwroot\Uploads\97effaa7-cf61-4af6-a335-6c7b4ff17ca2_09d556a2fa7557a67e444716629febeb.jpg" />
+    <None Include="wwwroot\Uploads\afc23811-f6a4-4fe1-b6e5-f8fe8382e334_admin.png" />
+    <None Include="wwwroot\Uploads\bfb57e3c-18e4-4410-8a66-d6d9ed536e6d_09d556a2fa7557a67e444716629febeb.jpg" />
+    <None Include="wwwroot\Uploads\c47ed7e9-3370-49a8-acd0-326cf9256aa2_09d556a2fa7557a67e444716629febeb.jpg" />
+    <None Include="wwwroot\Uploads\c49820ca-a7d9-47e7-88ca-c10de49e86ef_user.png" />
+    <None Include="wwwroot\Uploads\c84c7216-c298-42bb-a1e4-eca9eadfc257_417694586_1058458335468712_1248557444710731441_n.jpg" />
+    <None Include="wwwroot\Uploads\ef9301e0-c1dd-4151-a707-209b08a6553c_09d556a2fa7557a67e444716629febeb.jpg" />
+    <None Include="wwwroot\Uploads\f0168c14-02df-4507-b703-bd18fa4e2ba5_admin.png" />
+    <None Include="wwwroot\Uploads\fb647605-bf3d-4eff-bfb9-f7756bc95abe_user.png" />
+    <None Include="wwwroot\Uploads\fce4672b-6976-46e2-b761-6d652088b6b6_admin.png" />
+  </ItemGroup>
+
 </Project>

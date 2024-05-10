@@ -38,7 +38,7 @@ namespace Backend.Controllers
 		}
 
 		[Authorize(Roles = "admin")]
-        [HttpPost]
+		[HttpPost]
 		public async Task<IActionResult> AddCategory(CategoryCreateRequest request)
 		{
 			var category = new Category()
@@ -49,7 +49,7 @@ namespace Backend.Controllers
 			if (request.Image != null && request.Image.Length > 0)
 			{
 				var imagePath = $"Uploads/{Guid.NewGuid().ToString()}_{request.Image.FileName}";
-				var filePath = Path.Combine(Directory.GetCurrentDirectory(), imagePath);
+				var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", imagePath);
 
 				using (var stream = new FileStream(filePath, FileMode.Create))
 				{
@@ -83,7 +83,7 @@ namespace Backend.Controllers
 			if (request.Image != null && request.Image.Length > 0)
 			{
 				var imagePath = $"Uploads/{Guid.NewGuid().ToString()}_{request.Image.FileName}";
-				var filePath = Path.Combine(Directory.GetCurrentDirectory(), imagePath);
+				var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", imagePath);
 
 				using (var stream = new FileStream(filePath, FileMode.Create))
 				{
@@ -92,7 +92,7 @@ namespace Backend.Controllers
 
 				if (!string.IsNullOrEmpty(category.Image))
 				{
-					var oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), category.Image);
+					var oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", category.Image);
 					if (System.IO.File.Exists(oldImagePath))
 					{
 						System.IO.File.Delete(oldImagePath);
