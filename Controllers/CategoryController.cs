@@ -128,5 +128,13 @@ namespace Backend.Controllers
 			};
 			return Ok(response);
 		}
+
+		[Authorize(Roles = "admin")]
+		[HttpGet("dashboard/count")]
+		public async Task<IActionResult> GetNumberOfCategories()
+		{
+			var count = await _uow.CategoryRepository.GetNumberOfCategories();
+			return Ok(new { count = count });
+		}
 	}
 }

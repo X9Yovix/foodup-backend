@@ -88,5 +88,10 @@ namespace Backend.Pattern.Repository
 			return true;
 		}
 
+		public async Task<int> GetNumberOfUsers()
+		{
+			return await _dataContext.Users.CountAsync();
+		}
+
 	}
 }

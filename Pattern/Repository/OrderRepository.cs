@@ -44,5 +44,10 @@ namespace Backend.Pattern.Repository
 				await _dataContext.SaveChangesAsync();
 			}
 		}
+
+		public async Task<int> GetNumberOfOrders()
+		{
+			return await _dataContext.Orders.CountAsync();
+		}
 	}
 }

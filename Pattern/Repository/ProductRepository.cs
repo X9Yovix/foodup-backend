@@ -58,5 +58,10 @@ namespace Backend.Pattern.Repository
 			*/
 		}
 
+		public async Task<int> GetNumberOfProducts()
+		{
+			return await _dataContext.Products.CountAsync();
+		}
+
 	}
 }

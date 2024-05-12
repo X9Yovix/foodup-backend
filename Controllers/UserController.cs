@@ -185,5 +185,13 @@ namespace Backend.Controllers
 				return BadRequest(new { Status = "Error", Message = "Failed to apply password reset" });
 			}
 		}
+
+		[Authorize(Roles = "admin")]
+		[HttpGet("dashboard/count")]
+		public async Task<IActionResult> GetNumberOfUsers()
+		{
+			var count = await _uow.UserRepository.GetNumberOfUsers();
+			return Ok(new { count = count });
+		}
 	}
 }

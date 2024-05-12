@@ -53,5 +53,10 @@ namespace Backend.Pattern.Repository
 				.Take(pageSize)
 				.ToListAsync();
 		}
+
+		public async Task<int> GetNumberOfCategories()
+		{
+			return await _dataContext.Categories.CountAsync();
+		}
 	}
 }

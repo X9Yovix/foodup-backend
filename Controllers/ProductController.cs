@@ -166,5 +166,13 @@ namespace Backend.Controllers
 			}
 			return Ok(new { products = products });
 		}
+
+		[Authorize(Roles = "admin")]
+		[HttpGet("dashboard/count")]
+		public async Task<IActionResult> GetNumberOfProducts()
+		{
+			var count = await _uow.ProductRepository.GetNumberOfProducts();
+			return Ok(new { count = count });
+		}
 	}
 }

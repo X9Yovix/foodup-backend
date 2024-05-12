@@ -13,5 +13,6 @@ namespace Backend.Pattern.Interfaces
         Task<ResetPassword> GetResetPasswordByUserId(int userId);
 		Task<bool> AddResetPassword(ResetPassword resetPassword);
         Task<bool> ApplyResetPassword(string email, string otp, string password);
+		Task<int> GetNumberOfUsers();
 	}
 }

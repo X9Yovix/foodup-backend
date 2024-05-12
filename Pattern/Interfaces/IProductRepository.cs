@@ -12,5 +12,6 @@ namespace Backend.Pattern.Interfaces
 		Task DeleteProduct(int id);
 		Task<IEnumerable<Product>> GetProductsByCategoryId(int categoryId);
 		Task<IEnumerable<Product>> GetProductsByIds(List<int> productIds);
+		Task<int> GetNumberOfProducts();
 	}
 }

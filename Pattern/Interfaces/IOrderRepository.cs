@@ -8,5 +8,6 @@ namespace Backend.Pattern.Interfaces
 		Task<Order> GetOrderById(int userId, int id);
 		Task AddOrder(Order order);
 		Task DeleteOrder(int userId,int id);
+		Task<int> GetNumberOfOrders();
 	}
 }
