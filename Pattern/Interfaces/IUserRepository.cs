@@ -10,5 +10,8 @@ namespace Backend.Pattern.Interfaces
         Task<User> Login(User user);
         Task<User> GetUserByEmail(string email);
         bool VerifyOTP(string email, string otp);
-    }
+        Task<ResetPassword> GetResetPasswordByUserId(int userId);
+		Task<bool> AddResetPassword(ResetPassword resetPassword);
+        Task<bool> ApplyResetPassword(string email, string otp, string password);
+	}
 }

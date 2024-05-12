@@ -21,7 +21,7 @@ namespace Backend.Helpers
                 Port = 587,
                 EnableSsl = true,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential("devyn53@ethereal.email", "TRfcNkz4UyJzR57BFV")
+                Credentials = new NetworkCredential("yesenia33@ethereal.email", "NfgVfmePXkxCdvTX44")
             };
 
             var message = new MailMessage

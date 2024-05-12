@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace Backend.Controllers
 {
     [ApiController]
-    [AllowAnonymous]
     [Route("api/users")]
     public class UserController : ControllerBase
     {
@@ -128,5 +127,63 @@ namespace Backend.Controllers
             }
             return false;
         }
-    }
+
+		[HttpPost("reset-password")]
+		public async Task<IActionResult> ResetPassword(ResetPasswordRequest resetPasswordRequest)
+		{
+			var user = await _uow.UserRepository.GetUserByEmail(resetPasswordRequest.Email);
+			if (user == null)
+			{
+				return BadRequest(new { Status = "Error", Message = "User not found" });
+			}
+
+			var existingResetPassword = await _uow.UserRepository.GetResetPasswordByUserId(user.Id);
+			if (existingResetPassword != null && existingResetPassword.ExpirationTime > DateTime.Now)
+			{
+				return BadRequest(new { Status = "Error", Message = "Password reset request already sent" });
+			}
+
+			string otp = EmailHelper.GenerateOTP();
+			DateTime expirationTime = DateTime.Now.AddMinutes(10);
+
+			var resetPassword = new ResetPassword
+			{
+				OTP = otp,
+				ExpirationTime = expirationTime,
+				UserId = user.Id
+			};
+
+			var result = await _uow.UserRepository.AddResetPassword(resetPassword);
+			await _uow.SaveChangesAsync();
+			if (!result)
+			{
+				return StatusCode(500, new { Status = "Error", Message = "Failed to reset password. Please try again later" });
+			}
+
+			await EmailHelper.SendEmailAsync(user.Email, otp);
+
+			return Ok(new { Status = "Success", Message = "Password reset request sent. Check your email for OTP" });
+		}
+
+
+		[HttpPut("reset-password/apply")]
+		public async Task<IActionResult> ApplyResetPassword(ApplyResetPasswordRequest applyResetPasswordRequest)
+		{
+			var result = await _uow.UserRepository.ApplyResetPassword(
+				applyResetPasswordRequest.Email,
+				applyResetPasswordRequest.Otp,
+				applyResetPasswordRequest.Password
+			);
+
+			if (result)
+			{
+				await _uow.SaveChangesAsync();
+				return Ok(new { Status = "Success", Message = "Password updated" });
+			}
+			else
+			{
+				return BadRequest(new { Status = "Error", Message = "Failed to apply password reset" });
+			}
+		}
+	}
 }

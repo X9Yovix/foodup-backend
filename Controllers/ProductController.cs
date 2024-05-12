@@ -134,5 +134,37 @@ namespace Backend.Controllers
 			};
 			return Ok(response);
 		}
+
+		[HttpGet("category/{categoryId}")]
+		public async Task<IActionResult> GetProductsByCategory(int categoryId, [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 6)
+		{
+			var products = await _uow.ProductRepository.GetProductsByCategoryId(categoryId);
+
+			if (products == null || !products.Any())
+			{
+				return NotFound();
+			}
+
+			var paginatedProducts = products.Skip((pageNumber - 1) * pageSize).Take(pageSize);
+			return Ok(new { products = paginatedProducts });
+		}
+
+
+		[HttpPost("orders")]
+		public async Task<IActionResult> GetProductsByIds([FromBody] List<int> productIds)
+		{
+			if (productIds == null || !productIds.Any())
+			{
+				return BadRequest("No product IDs provided in the request body");
+			}
+
+			var products = await _uow.ProductRepository.GetProductsByIds(productIds);
+
+			if (products == null || !products.Any())
+			{
+				return NotFound("No products found for the provided IDs");
+			}
+			return Ok(new { products = products });
+		}
 	}
 }

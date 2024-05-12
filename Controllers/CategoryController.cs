@@ -20,7 +20,7 @@ namespace Backend.Controllers
 		}
 
 		[HttpGet]
-		public async Task<IActionResult> GetCategories(int pageNumber = 1, int pageSize = 12)
+		public async Task<IActionResult> GetCategories([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 12)
 		{
 			var categories = await _uow.CategoryRepository.GetPaginatedCategories(pageNumber, pageSize);
 			return Ok(new { categories = categories });

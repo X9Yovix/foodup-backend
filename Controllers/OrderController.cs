@@ -1,6 +1,7 @@
 ﻿using Backend.Data;
 using Backend.DTOS;
 using Backend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -81,6 +82,7 @@ namespace Backend.Controllers
 		}
 
 		[HttpPost]
+		[Authorize]
 		public async Task<IActionResult> CreateOrder(OrderCreateRequest request)
 		{
 			int userId = GetUserIdFromToken();
